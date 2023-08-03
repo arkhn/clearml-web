@@ -33,6 +33,6 @@ if (savedData) {
 
 (async () => {
   const baseHref = ( window as any ).__env.subPath || '' as string;
-  updateHttpUrlBaseConstant({...environment, ...(baseHref && !baseHref.startsWith('${') && {apiBaseUrl: baseHref + environment.apiBaseUrl})});
+  updateHttpUrlBaseConstant({...environment, ...(baseHref && !baseHref.startsWith('${') && {apiBaseUrl: [baseHref, environment.apiBaseUrl].join('')})}); // Fixes clearmlnull
   await platformBrowserDynamic().bootstrapModule(AppModule);
 })();

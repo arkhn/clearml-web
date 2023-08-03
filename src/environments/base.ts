@@ -61,7 +61,7 @@ export interface Environment {
 
 export const BASE_ENV = {
   production: true,
-  apiBaseUrl: null,
+  apiBaseUrl: '/api',
   fileBaseUrl: null,
   productName: 'clearml',
   demo: false,
